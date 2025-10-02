@@ -1,0 +1,29 @@
+version: '3.8'
+
+services:
+  nginx:
+    image: nginx:1.29
+    container_name: nginx
+    ports:
+      - "8080:80"
+    volumes:
+      - ./nginx/conf.d:/etc/nginx/conf.d
+      - ./app:/var/www/html
+    depends_on:
+      - php
+    networks:
+      - appnet
+
+  php:
+    build: 
+      context: ./php
+      dockerfile: Dockerfile
+    container_name: php74
+    volumes:
+      - ./app:/var/www/html
+      - ./php/upload.ini:/usr/local/etc/php/conf.d/upload.ini
+    networks:
+      - appnet
+
+networks:
+  appnet:
