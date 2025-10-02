@@ -23,7 +23,7 @@ Cocok untuk aplikasi PHP tradisional atau framework (CodeIgniter, Laravel, dsb).
 │ ├── instantclient-basic-linux.x64-11.2.0.4.0.zip
 │ └── instantclient-sdk-linux-x86-64-11.2.0.2.0.zip
 │
-└── app/ # kode PHP```
+└── app/ ```
 
 ## ⚡ Quick Start
 
